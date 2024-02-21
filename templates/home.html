@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block heading %}{% endblock %}
+    {% block content %}
+    <form action="/story">
+        {% for fill_in in fill_ins %}
+        <div>
+            <label for="{{fill_in}}">{{fill_in}}:</label>
+            <input type="text" name="{{fill_in}}" id="{{fill_in}}">
+        </div>
+        {% endfor %}
+        <button>Start!</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
